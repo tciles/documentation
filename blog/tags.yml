@@ -1,4 +1,9 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+numerique-responsable:
+  label: Numérique responsable
+  permalink: /numerique-responsable
+  description: Numérique responsable
+
+rse:
+  label: RSE
+  permalink: /rse
+  description: Responsabilité Sociale des Entreprises

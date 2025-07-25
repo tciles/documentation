@@ -3,7 +3,7 @@ tciles:
   title: Développeur FullStack
   url: https://linkedin.com/in/tciles
   image_url: https://github.com/tciles.png
-  page: true
+  page: false
   socials:
     github: tciles
     strava: tciles

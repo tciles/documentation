@@ -1,12 +1,12 @@
 ---
 slug: numerique-responsable
 title: Numérique responsable
-authors: [tciles]
-tags: [numerique, responsable]
+authors: tciles
+tags: ["numerique-responsable", rse]
 ---
+<!-- truncate -->
 
 # Numérique responsable
-
 
 ## L'empreinte écologie et sociale du Numérique
 ### Le cycle de vie d'un objet numérique
