@@ -15,6 +15,8 @@ Par exemple une tablette, un smartphone ...
 #### 1- Extraction des matières
 L'extraction des matières première est issue des mines. 
 
+![img.png](mines.png)
+
 Cette extraction peut provoquées des conflits armés, on parle de **Minerais de sang** (Etain, Tantale, Or, Tungstène)
 en RDC (~6millions de morts), Grands lacs, Birmanie, Amérique centrale
 
