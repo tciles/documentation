@@ -63,3 +63,11 @@ L'indice de réparabilité résulte du calcul de ces scores par critères, ramen
 - **Utilisable**: Utilisable par tous (connexion, handicap ...)
 - **Utilisé**: "70% des fonctionnalités demandées par les utilisateurs ne sont pas essentielle et 45% ne sont jamais utilisées." — _Ecoconception Web, les 115 bonnes pratiques de Frédéric Bordage._
 
+## Le label numérique responsable (NR)
+[https://label-nr.fr/](https://label-nr.fr/)
+
+![img.png](nr1.png)
+![img.png](nr2.png)
+
+Les labels sont attribués après des formations et un référentiel/cahier des charges à respecter.
+[https://label-nr.fr/comment/#referentiel](https://label-nr.fr/comment/#referentiel)
