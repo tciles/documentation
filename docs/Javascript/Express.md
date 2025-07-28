@@ -202,3 +202,64 @@ app.get('/', (req, res) => {
 
 // ...
 ```
+
+## Soumission de données
+
+```js title="server.cjs"
+// ...
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+// ...
+
+const cities = [];
+
+app.get('/cities', (req, res) => {
+    res.render('index.ejs', { cities });
+});
+
+app.post('/cities/add', (req, res) => {
+    const { name } = req.body;
+
+    if (!name) {
+        return res.status(402).render('index.ejs', { cities });
+    }
+
+    cities.push({ name });
+
+    return res.redirect('/cities');
+});
+
+// ...
+```
+
+```ejs title="index.ejs"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Mes villes</h1>
+    
+    <form action="/cities/add" method="post">
+        <div>
+            <label for="name">Nom:</label>
+            <input type="text" id="name" name="name">
+        </div>
+
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <h2>Les villes</h2>
+    <ul>
+        <% for(let i = 0, l = cities.length; i < l; i++) { %>
+            <li><%= cities[i].name %></li>
+        <% } %>
+    </ul>
+</body>
+</html>
+```
