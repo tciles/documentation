@@ -163,3 +163,42 @@ app.use((req, res, next) => {
     Middleware2-->Route: Middleware 2 executed.
     Route-->Response: Route return response.
 ```
+
+## Moteur de template
+Il existe différents moteurs de template `ejs`, `pug`, `mustache`, `handlebars` ... 
+
+Dans un contexte **Express**:
+
+`app.set('view engine', 'ejs');`
+
+`app.engine` => [Consolidate.js](https://github.com/tj/consolidate.js)
+
+```ejs title='index.ejs'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Hello <%= username %></h1>
+    
+</body>
+</html>
+```
+
+```js title="server.js"
+// ...
+
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+    res.render('index.ejs', { 
+        username: 'tciles'
+     });
+});
+
+// ...
+```
