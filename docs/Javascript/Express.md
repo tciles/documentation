@@ -4,13 +4,25 @@ category: Javascript
 
 # Express 
 
+```mermaid
+    sequenceDiagram
+    box Client
+    participant User
+    end
+    box Server
+    participant NodeJS
+    end
+    User->>NodeJS: HTTP GET REQUEST
+    NodeJS->>User: HTTP GET RESPONSE
+```
+
 ## Qu'est-ce que c'est ?
 [Express](https://expressjs.com/)
 
 ExpressJS est un module qui rajoute une surcouche au module de base `node:http` de NodeJS qui permet de créer facilement une api/application web. En effet Express incorpore nativement un système de routing et de middleware.
 
 ## Exemple
-```js
+```js title="server.js"
 const express = require('express');
 
 // Init
@@ -89,8 +101,7 @@ app.listen(port, () => {
 
 ## Router
 
-`router.js`
-```js
+```js title="routes/router.js"
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
@@ -102,8 +113,7 @@ export {
 }
 ```
 
-`server.js` 
-```js
+```js title="server.js"
 import express from 'express';
 import { router as defaultRouter } from './router.js' 
 
@@ -121,8 +131,7 @@ app.listen(port, () => {
 
 ## Middleware
 
-`not-found.middleware.js`:
-```js
+```js title="middlewares/not-found.middleware.js"
 app.use((req, res, next) => {
     res.status(404).json({
         success: false,
