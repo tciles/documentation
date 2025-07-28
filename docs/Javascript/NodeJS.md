@@ -151,7 +151,7 @@ calculatrice.div(a, b);
 
 1 - Lancer npm init qui va poser un ensemble de question afin d'initialiser le projet NodeJS. Un fichier `package.json` sera créé à la fin.
 
-```bash
+```sh
 npm init
 
 package name: (tp2)
@@ -239,3 +239,9 @@ de créer un fichier `package-lock.json` avec les metadata(version, checksum, ur
 ```
 
 enfin un dossier `node_modules` a été créé et contient le code source des modules.
+
+## Supprimer une dépendance
+
+```sh
+npm remove ma-dependance
+```

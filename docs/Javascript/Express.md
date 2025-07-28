@@ -282,7 +282,7 @@ Librairies existantes:
 
 Installation
 
-```bash
+```sh
 npm i express-validator
 ```
 
@@ -294,7 +294,7 @@ const { body, validationResult } = require('express-validator');
 
 
 app.post('/cities/add', 
-    body('name').isString().notEmpty(), 
+    body('name').isString().notEmpty().escape(), 
     (req, res) => {
     const result = validationResult(req);
 
@@ -316,7 +316,7 @@ app.post('/cities/add',
 
 Exemple de résultat avec une erreur
 
-```bash
+```sh
 Result {
   formatter: [Function: formatter],
   errors: [
