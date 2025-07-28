@@ -131,6 +131,14 @@ app.listen(port, () => {
 
 ## Middleware
 
+Une function qui s'exécute avant ou après l'appel de la route.
+
+Cela permet par exemple de :
+- Validation de données d'une requête (Joi/AJV)
+- Validation des tokens/authentification (JWT)
+- Gérer les logs
+- ...
+
 ```js title="middlewares/not-found.middleware.js"
 app.use((req, res, next) => {
     res.status(404).json({
@@ -138,4 +146,20 @@ app.use((req, res, next) => {
         message: "Page not found"
     });
 });
+```
+
+
+```mermaid
+    sequenceDiagram
+
+    actor  User
+    participant Middleware1
+    participant Middleware2
+    participant Route
+    participant Response
+
+    User-->Middleware1: User request.
+    Middleware1-->Middleware2: Middleware 1 executed.
+    Middleware2-->Route: Middleware 2 executed.
+    Route-->Response: Route return response.
 ```
