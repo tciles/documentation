@@ -181,7 +181,7 @@ Résultat :
 }
 ```
 
-## Installer un dépendance
+## Installer une dépendance
 
 Une dépendance:
 
