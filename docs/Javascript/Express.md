@@ -87,4 +87,46 @@ app.listen(port, () => {
 });
 ```
 
+## Router
 
+`router.js`
+```js
+const router = require('express').Router();
+
+router.get('/', (req, res) => {
+    res.send('OK');
+});
+
+export {
+    router
+}
+```
+
+`server.js` 
+```js
+import express from 'express';
+import { router as defaultRouter } from './router.js' 
+
+// Init
+const app = express();
+const port = 3000;
+
+app.use(defaultRouter)
+app.use('/group', defaultRouter)
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+});
+```
+
+## Middleware
+
+`not-found.middleware.js`:
+```js
+app.use((req, res, next) => {
+    res.status(404).json({
+        success: false,
+        message: "Page not found"
+    });
+});
+```
