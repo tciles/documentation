@@ -224,7 +224,7 @@ app.post('/cities/add', (req, res) => {
     const { name } = req.body;
 
     if (!name) {
-        return res.status(402).render('index.ejs', { cities });
+        return res.status(422).render('index.ejs', { cities });
     }
 
     cities.push({ name });
@@ -299,13 +299,13 @@ app.post('/cities/add',
     const result = validationResult(req);
 
     if (!result.isEmpty()) {
-        return res.status(402).render('index.ejs', { cities });
+        return res.status(422).render('index.ejs', { cities });
     }
 
     const { name } = req.body;
 
     if (!name) {
-        return res.status(402).render('index.ejs', { cities });
+        return res.status(422).render('index.ejs', { cities });
     }
 
     cities.push({ name });
