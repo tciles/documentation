@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+category: Computer
+---
+
 # Endianness (Boutisme)
 
 C'est la manière dont un processeur lit les bits. 

@@ -1,8 +1,6 @@
 ---
 sidebar_position: 1
+category: Computer
 ---
 
-# Documentation
-
-
-
+# Computer
