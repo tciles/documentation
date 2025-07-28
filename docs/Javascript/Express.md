@@ -1,5 +1,6 @@
 ---
 category: Javascript
+version: 0.0.1
 ---
 
 # Express 
@@ -262,4 +263,70 @@ app.post('/cities/add', (req, res) => {
     </ul>
 </body>
 </html>
+```
+
+## Validation des données
+
+La validation des données est importante:
+- Permet d'éviter les erreurs de saisies
+- Se prémunir d'attaques malveillantes comme la XSS
+- Améliorer la qualité d'utilisation
+
+Librairies existantes:
+- Joi: [https://github.com/hapijs/joi](https://github.com/hapijs/joi)
+- AJV: [https://github.com/ajv-validator/ajv](https://github.com/ajv-validator/ajv)
+- express-validator: [https://github.com/express-validator/express-validator](https://github.com/express-validator/express-validator)
+
+
+### Exemple avec express-validator
+
+Installation
+
+```bash
+npm i express-validator
+```
+
+Ajout d'un validateur
+```js title="server.cjs"
+// ...
+const { body, validationResult } = require('express-validator');
+// ...
+
+
+app.post('/cities/add', 
+    body('name').isString().notEmpty(), 
+    (req, res) => {
+    const result = validationResult(req);
+
+    if (!result.isEmpty()) {
+        return res.status(402).render('index.ejs', { cities });
+    }
+
+    const { name } = req.body;
+
+    if (!name) {
+        return res.status(402).render('index.ejs', { cities });
+    }
+
+    cities.push({ name });
+
+    return res.redirect('/cities');
+});
+```
+
+Exemple de résultat avec une erreur
+
+```bash
+Result {
+  formatter: [Function: formatter],
+  errors: [
+    {
+      type: 'field',
+      value: '',
+      msg: 'Invalid value',
+      path: 'name',
+      location: 'body'
+    }
+  ]
+}
 ```
