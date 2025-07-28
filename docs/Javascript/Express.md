@@ -292,7 +292,6 @@ Ajout d'un validateur
 const { body, validationResult } = require('express-validator');
 // ...
 
-
 app.post('/cities/add', 
     body('name').isString().notEmpty().escape(), 
     (req, res) => {
@@ -312,6 +311,9 @@ app.post('/cities/add',
 
     return res.redirect('/cities');
 });
+
+// Dans le payload du body le champ name doit être une string, non vide et express-validator échappe les caractères
+body('name').isString().notEmpty().escape()
 ```
 
 Exemple de résultat avec une erreur
