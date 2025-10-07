@@ -34,8 +34,7 @@ Exemple :
 | -- | -- |
 |1| 0476343605 - 0606060606 |
 
-V<br>
-V
+Attendu:
 
 |id|phone|mobile|
 | -- | -- | -- |
