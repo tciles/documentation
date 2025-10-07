@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-category: SQLServer
+category: Database
 ---
 
 # SQLServer
